@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'order_details/update'
+  end
   namespace :public do
     get 'cart_items/index'
     get 'cart_items/update'
