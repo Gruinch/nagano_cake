@@ -1,47 +1,5 @@
 Rails.application.routes.draw do
-  namespace :public do
-    get 'customers/show'
-    get 'customers/edit'
-    get 'customers/update'
-    get 'customers/unsubscribe'
-    get 'customers/withdraw'
-  end
-  namespace :public do
-    get 'items/index'
-    get 'items/show'
-  end
-  namespace :public do
-    get 'homes/top'
-    get 'homes/about'
-  end
-  namespace :admin do
-    get 'order_details/update'
-  end
-  namespace :public do
-    get 'cart_items/index'
-    get 'cart_items/update'
-    get 'cart_items/destroy'
-    get 'cart_items/destroy_all'
-    get 'cart_items/create'
-  end
-  namespace :admin do
-    get 'genres/index'
-    get 'genres/create'
-    get 'genres/edit'
-    get 'genres/update'
-  end
-  namespace :admin do
-    get 'customers/index'
-    get 'customers/show'
-    get 'customers/edit'
-    get 'customers/update'
-  end
-  namespace :public do
-    get 'addresses/index'
-    get 'addresses/edit'
-    get 'addresses/update'
-    get 'addresses/destroy'
-  end
+
   devise_for :customers, controllers: {
     sessions:      'customers/sessions',
     passwords:     'customers/passwords',
@@ -54,17 +12,21 @@ Rails.application.routes.draw do
     registrations: 'admin/registrations',
   }
 
-  namespace :public do
+    get '/' => 'homes#top', as: 'homes/top'
+    get '/about' => 'homes#about', as: 'homes/about'
+    resources :customers, only: [:show, :edit, :update, :unsubscribe, :withdraw]
+    resources :items, only: [:index, :show]
+    resources :addresses, only: [:index, :edit, :update, :destroy]
+    resources :cart_items, only: [:index, :update, :destroy, :destroy_all, :create]
     resources :orders
-  end
 
   namespace :admin do
     get '/' => 'homes#top', as: '/homes/top'
+    resources :customers, only: [:index, :show, :edit, :update]
     resources :items
+    resources :genres, only: [:index, :create, :edit, :update]
     get 'orders/show'
     get 'orders/update'
-
+    get 'order_details/update'
   end
-
-
 end
