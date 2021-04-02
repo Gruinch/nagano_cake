@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
+  namespace :public do
+    get 'customers/show'
+    get 'customers/edit'
+    get 'customers/update'
+    get 'customers/unsubscribe'
+    get 'customers/withdraw'
+  end
+  namespace :public do
+    get 'items/index'
+    get 'items/show'
+  end
+  namespace :public do
+    get 'homes/top'
+    get 'homes/about'
+  end
   namespace :admin do
     get 'order_details/update'
   end
