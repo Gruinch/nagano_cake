@@ -15,13 +15,14 @@
         </tr>
       </thead>
       <tbody>
-        <% @orders.each do |order| %>
+        <% @order_details.each do |orderDetail| %>
         <tr>
-          <td><%= %></td>
-          <td><%=  %></td>
-          <td><%=  %></td>
-          <td><%=  %></td>
+          <td><%= order.created_at %></td>
+          <td><%= customer.name  %></td>
+          <td><%= order.amount  %></td>
+          <td><%= order.order_status %></td>
         </tr>
+        <% end %>
       </tbody>
     </table>
   </div>
