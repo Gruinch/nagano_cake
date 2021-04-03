@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>NaganoCake</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/starter-template/">
+    <link href="../assets/dist/css/bootstrap.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sticky-footer-navbar/">
 
+    <head>
+    <title>NaganoCake</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <style>
       .bd-placeholder-img {
@@ -32,64 +37,48 @@
     </style>
     </head>
 
-  <body class="d-flex flex-column h-100">
-  <header>
+  <body>
+    <header class="header">
   <!-- Fixed navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
-    <div class="container">
-    <a class="navbar-brand" href="#"><strong>Nagano Cake</strong></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav ml-auto justify-content-end">
+    <nav class="navbar navbar-expand navbar-light mt-light" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="#"><strong>Nagano Cake</strong></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto justify-content-end">
+            <% if admin_signed_in? %>
+            <li class="btn btn-outline-info mx-3"><a class="nav-link" href="/admin/items/">商品一覧</a></li>
+            <li class="btn btn-outline-info mx-3"><a class="nav-link" href="#">会員一覧</a></li>
+            <li class="btn btn-outline-info mx-3"><a class="nav-link" href="#">注文履歴一覧</a></li>
+            <li class="btn btn-outline-info mx-3"><a class="nav-link" href="#">ジャンル一覧</a></li>
+            <li class="btn btn-outline-info mx-3"><a class="nav-link" href="/admins/sign_out" data-method="delete">ログアウト</a></li>
 
-        <% if admin_signed_in? %>
-        <li class="btn btn-outline-info mx-3"><a class="nav-link" href="#">商品一覧</a></li>
-        <li class="btn btn-outline-info mx-3"><a class="nav-link" href="#">会員一覧</a></li>
-        <li class="btn btn-outline-info mx-3"><a class="nav-link" href="#">注文履歴一覧</a></li>
-        <li class="btn btn-outline-info mx-3"><a class="nav-link" href="#">ジャンル一覧</a></li>
-        <li class="btn btn-outline-info mx-3"><a class="nav-link" href="/admins/sign_out" data-method="delete">ログアウト</a></li>
-
-        <form class="form-inline mt-2 mt-md-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-
-        <%else%>
-        <li class="nav-item">
-          <a class="nav-link btn btn-info mx-3" href="#">About<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link btn btn-info mx-3" href="#">商品一覧</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link btn btn-info mx-3" href="/customers/sign_up">新規登録</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link btn btn-info mx-3" href="/customers/sign_in">ログイン</a>
-        </li>
-        <% end %>
-      </ul>
-      </div>
-      </div>
-
-      </nav>
-    </header>
-
-
-      <footer class="footer mt-auto py-3">
-        <div class="container">
-          <span class="text-muted">Place sticky footer content here.</span>
-        </div>
-      </footer>
-
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.js"></script></body>
-
-    <%= yield %>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+            <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <%else%>
+            <li class="nav-item">
+              <a class="nav-link btn btn-info mx-3" href="#">About<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-info mx-3" href="#">商品一覧</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-info mx-3" href="/customers/sign_up">新規登録</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-info mx-3" href="/customers/sign_in">ログイン</a>
+            </li>
+            <% end %>
+          </ul>
+       </div>
+    </nav>
+   </header>
+      <%=yield %>
+  <footer class="footer mt-auto py-3 row col-12">
+  <span class="text-muted">Place sticky footer content here.</span>
+  </footer>
   </body>
 </html>
