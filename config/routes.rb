@@ -9,8 +9,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:index, :show, :edit, :update]
     resources :items
     resources :genres, only: [:index, :create, :edit, :update]
-    get 'orders/show'
-    get 'orders/update'
+    resources :orders, only: [:show, :update]
     get 'order_details/update'
     end
 

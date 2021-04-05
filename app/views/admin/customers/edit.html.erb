@@ -1,2 +1,47 @@
-<h1>Admin::Customers#edit</h1>
-<p>Find me in app/views/admin/customers/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+   <h5><%= @customer.last_name %><%= @customer.first_name %>さんの会員情報編集</h5>
+  </div>
+  <div class="row">
+    <%= form_with model:@customer, url:admin_customer_path(@customer), local:true do |f| %>
+      <div class="row g-3">
+        <div class="col-2 m-3">会員ID</div>
+        <div class="col m-3"><%= @customer.id %></div>
+      </div>
+      <div class="row g-3">
+        <div class="col-2 m-3">氏名</div>
+        <div class="col m-3"><%= f.text_field :last_name, class:"form-control" %></div>
+        <div class="col m-3"><%= f.text_field :first_name, class:"form-control"%></div>
+      </div>
+      <div class="row g-3">
+        <div class="col-2 m-3 ">フリガナ</div>
+         <div class="col m-3"><%= f.text_field :last_name_kana, class:"form-control" %></div>
+         <div class="col m-3"><%= f.text_field :first_name_kana, class:"form-control" %></div>
+      </div>
+      <div class="row g-3">
+        <div class="col-2 m-3">郵便番号</div>
+        <div class="col-5 m-3"><%= f.text_field :postal_code, class:"form-control" %></div>
+      </div>
+      <div class="row g-3">
+        <div class="col-2 m-3">住所</div>
+        <div class="col m-3"><%= f.text_field :address, class:"form-control" %></div>
+      </div>
+      <div class="row g-3">
+        <div class="col-2 m-3">電話番号</div>
+        <div class="col-5 m-3"><%= f.text_field :telephone_number, class:"form-control", placeholder:"ジャンル名" %></div>
+      </div>
+      <div class="row g-3">
+        <div class="col-4 m-3">メールアドレス</div>
+        <div class="col m-3"><%= f.text_field :email, class:"form-control", placeholder:"ジャンル名" %></div>
+      </div>
+      </div>
+      <div class="row-auto">
+      <%= f.submit  '変更を保存',class:"btn btn-success"  %>
+      </div>
+      <% end %>
+        <div class="row g-3">
+        <div class="col">会員ステータス</div>
+        <div class="col"><%= @customer.is_active %></div>
+
+  </div>
+</div>

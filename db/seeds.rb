@@ -34,3 +34,39 @@
     address: '沖縄県名護市',
     telephone_number: '000-0000-0001'
   )
+
+  Order.create!(
+    customer_id: '2',
+    payment_method: '1',
+    address: '福岡県北九州市',
+    postal_code: '222-2222',
+    name: 'John Adams',
+    total_payment: '1300',
+    shipping_fee: '300',
+    )
+
+  Order.create!(
+    customer_id: '1',
+    payment_method: '1',
+    address: '福岡県北九州市',
+    postal_code: '222-2233',
+    name: 'Ruby Jacobs',
+    total_payment: '1500',
+    shipping_fee: '300',
+    )
+
+  Order_details.create!(
+    item_id: '1',
+    order_id: '1',
+    amount: '5',
+    price: '1000',
+    shipping_fee: '300'
+    )
+
+    Order_details.create!(
+    item_id: '1',
+    order_id: '2',
+    amount: '5',
+    price: '1200',
+    shipping_fee: '300'
+    )
