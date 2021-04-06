@@ -2,5 +2,5 @@ ja:
   enums:
     order:
       payment_method:
-        card: "支払待ち"
-        cash: "支払済み"
+        card: "クレジットカード"
+        cash: "銀行振り込み"
