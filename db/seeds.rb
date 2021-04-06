@@ -54,19 +54,3 @@
     total_payment: '1500',
     shipping_fee: '300',
     )
-
-  Order_details.create!(
-    item_id: '1',
-    order_id: '1',
-    amount: '5',
-    price: '1000',
-    shipping_fee: '300'
-    )
-
-    Order_details.create!(
-    item_id: '1',
-    order_id: '2',
-    amount: '5',
-    price: '1200',
-    shipping_fee: '300'
-    )
