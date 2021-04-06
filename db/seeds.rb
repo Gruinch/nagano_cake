@@ -35,22 +35,3 @@
     telephone_number: '000-0000-0001'
   )
 
-  Order.create!(
-    customer_id: '2',
-    payment_method: '1',
-    address: '福岡県北九州市',
-    postal_code: '222-2222',
-    name: 'John Adams',
-    total_payment: '1300',
-    shipping_fee: '300',
-    )
-
-  Order.create!(
-    customer_id: '1',
-    payment_method: '1',
-    address: '福岡県北九州市',
-    postal_code: '222-2233',
-    name: 'Ruby Jacobs',
-    total_payment: '1500',
-    shipping_fee: '300',
-    )
