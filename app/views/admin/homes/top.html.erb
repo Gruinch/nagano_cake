@@ -15,9 +15,9 @@
         </tr>
       </thead>
       <tbody>
-        <% @order_details.each do |orderDetail| %>
+        <% @orders.order_details.each do |orderDetail| %>
         <tr>
-          <td><%= link_to order.timestamp, admin_order_path(@order) %></td>
+          <td><%= link_to order.created_at, admin_order_path(@order) %></td>
           <td><%= customer.name  %></td>
           <td><%= order.amount  %></td>
           <td><%= order.order_status %></td>
