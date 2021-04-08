@@ -25,11 +25,11 @@
             <td>住所</td>
             <td><%= @customer.address%></td>
           </tr>
-          <tr>  
+          <tr>
             <td>電話番号</td>
             <td><%= @customer.telephone_number%></td>
           </tr>
-          <tr>  
+          <tr>
             <td>メールアドレス</td>
             <td><%= @customer.email %></td>
           </tr>
@@ -40,7 +40,7 @@
           <tr>
             <td></td>
             <td><a class="btn btn-success" href="/admin/customers/<%= @customer.id %>/edit">編集する</a></td>
-            <td>注文履歴一覧</td>
+            <td><a class="btn btn-success" href="/admin/orders">注文履歴一覧</a></td>
           </tr>
         </tbody>
       </table>

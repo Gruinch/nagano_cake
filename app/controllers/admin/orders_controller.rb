@@ -4,6 +4,10 @@ class Admin::OrdersController < ApplicationController
     @customer = @order.customer
     @order_details = @order.order_details
   end
+  
+  def index
+    @orders = Order.
+  end 
 
   def update
   end

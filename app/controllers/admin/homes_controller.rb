@@ -5,8 +5,8 @@ class Admin::HomesController < ApplicationController
 
   private
 
-  def Order_params
-    params.require(:order).permit(:payment_method, :address, :postal_code, :name, :total_payment, :shipping_fee)
+  def order_params
+    params.require(:order).permit( :payment_method, :address, :postal_code, :name, :total_payment, :shipping_fee)
   end
 
 end
