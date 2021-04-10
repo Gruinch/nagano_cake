@@ -5,8 +5,6 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.js"></script>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/starter-template/">
     <link href="../assets/dist/css/bootstrap.css" rel="stylesheet">
 
@@ -19,25 +17,11 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
     </head>
 
   <body>
+    <div class="footer-fixed">
     <header class="header">
   <!-- Fixed navbar -->
     <nav class="navbar navbar-expand navbar-light mt-light" style="background-color: #e3f2fd;">
@@ -49,9 +33,9 @@
           <ul class="navbar-nav ml-auto justify-content-end">
             <% if admin_signed_in? %>
             <li class="btn btn-outline-info mx-3"><a class="nav-link" href="/admin/items/">商品一覧</a></li>
-            <li class="btn btn-outline-info mx-3"><a class="nav-link" href="#">会員一覧</a></li>
-            <li class="btn btn-outline-info mx-3"><a class="nav-link" href="#">注文履歴一覧</a></li>
-            <li class="btn btn-outline-info mx-3"><a class="nav-link" href="#">ジャンル一覧</a></li>
+            <li class="btn btn-outline-info mx-3"><a class="nav-link" href="/admin/customers/">会員一覧</a></li>
+            <li class="btn btn-outline-info mx-3"><a class="nav-link" href="/admin/">注文履歴一覧</a></li>
+            <li class="btn btn-outline-info mx-3"><a class="nav-link" href="/admin/genres/">ジャンル一覧</a></li>
             <li class="btn btn-outline-info mx-3"><a class="nav-link" href="/admins/sign_out" data-method="delete">ログアウト</a></li>
 
             <form class="form-inline mt-2 mt-md-0">
@@ -60,10 +44,10 @@
             </form>
             <%else%>
             <li class="nav-item">
-              <a class="nav-link btn btn-info mx-3" href="#">About<span class="sr-only">(current)</span></a>
+              <a class="nav-link btn btn-info mx-3" href="/public/homes/about">About<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link btn btn-info mx-3" href="#">商品一覧</a>
+              <a class="nav-link btn btn-info mx-3" href="/items">商品一覧</a>
             </li>
             <li class="nav-item">
               <a class="nav-link btn btn-info mx-3" href="/customers/sign_up">新規登録</a>
@@ -76,9 +60,14 @@
        </div>
     </nav>
    </header>
+   <main>
       <%=yield %>
-  <footer class="footer mt-auto py-3 row col-12">
-  <span class="text-muted">Place sticky footer content here.</span>
-  </footer>
+    </main>
+
+    <footer >
+        <div class="footer">
+         </div>
+    </footer>
+  </div>
   </body>
 </html>

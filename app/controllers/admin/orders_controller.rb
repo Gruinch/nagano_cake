@@ -6,7 +6,6 @@ class Admin::OrdersController < ApplicationController
   end
   
   def index
-    @orders = Order.
   end 
 
   def update

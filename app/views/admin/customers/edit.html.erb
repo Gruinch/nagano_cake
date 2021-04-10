@@ -34,14 +34,19 @@
         <div class="col-4 m-3">メールアドレス</div>
         <div class="col m-3"><%= f.text_field :email, class:"form-control", placeholder:"ジャンル名" %></div>
       </div>
+      <div class="row g-3">
+        <div class="col m-3">会員ステータス</div>
+        <div class="col"><%= f.radio_button :is_active, :true, checked: @customer.is_active? %>
+        <%= f.label :is_active, "有効", {value: :true} %></div>
+        <div class="col"><%= f.radio_button :is_active, :false,checked: @customer.is_active? %>
+        <%= f.label :is_active, "退会", {value: :false} %></div>
+
+      </div>
       </div>
       <div class="row-auto">
       <%= f.submit  '変更を保存',class:"btn btn-success"  %>
       </div>
       <% end %>
-        <div class="row g-3">
-        <div class="col">会員ステータス</div>
-        <div class="col"><%= @customer.is_active %></div>
 
   </div>
 </div>

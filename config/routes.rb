@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-    namespace :public do
-    get 'homes/top'
-    get 'home/about'
-    end
+    root 'public/homes#top' 
+    get '/about' => 'public/homes#about', as: 'public/hom/about'
 
     namespace :admin do
     get '/' => 'homes#top', as: '/homes/top'

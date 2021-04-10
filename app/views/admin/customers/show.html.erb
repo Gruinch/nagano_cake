@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row-4">
+  <div class="row">
    <h5><%= @customer.last_name %><%= @customer.first_name %>さんの会員詳細</h5>
   </div>
   <div class="row">
@@ -35,12 +35,12 @@
           </tr>
           <tr>
             <td>会員ステータス</td>
-            <td><%= @customer.is_active %></td>
+            <td class="customer-status"><%= @customer.is_active? ? '有効' : '退会' %></td>
           </tr>
           <tr>
             <td></td>
             <td><a class="btn btn-success" href="/admin/customers/<%= @customer.id %>/edit">編集する</a></td>
-            <td><a class="btn btn-success" href="/admin/orders">注文履歴一覧</a></td>
+            <td><a class="btn btn-primary" href="/admin/orders">注文履歴一覧を見る</a></td>
           </tr>
         </tbody>
       </table>

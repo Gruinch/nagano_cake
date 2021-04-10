@@ -2,6 +2,10 @@ class Admin::HomesController < ApplicationController
   def top
     @orders = Order.all
   end
+  
+  def show
+    
+  end
 
   private
 

@@ -17,3 +17,82 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+.footer-fixed {
+        min-height: 100vh;
+        position: relative;
+        padding-bottom: 60px;
+        box-sizing:border-box;
+}
+
+.footer {
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        background: #e3f2fd;
+
+}
+
+
+.bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+}
+
+@media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+}
+
+h5 {
+        background-color: #b0c4de;
+        margin: 10px;
+}
+
+.add {
+        font-size: 2em;
+        color: #B0E0E6;
+        box-shadow: 2px 2px 4px;
+
+}
+
+.add-button {
+        text-align: right;
+}
+
+.items-table {
+        width: 100%;
+        margin: 0 auto;
+}
+
+.item-image, .item-details {
+        display: inline-block;
+}
+
+.item-details {
+        margin: 5px auto;
+}
+
+.item-button {
+        text-align: center;
+}
+
+
+$active: true;
+$inactive: false;
+
+.customer-status {
+        @if $active == true {
+                color: #32cd32;
+        }
+        @else {
+                color: #808080;
+        }
+}
+
+/*会員側*/

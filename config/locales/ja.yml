@@ -4,3 +4,10 @@ ja:
       payment_method:
         card: "クレジットカード"
         cash: "銀行振り込み"
+
+ja:
+  enums:
+    customer:
+      is_active:
+        active: "有効"
+        inactive: "退会"
