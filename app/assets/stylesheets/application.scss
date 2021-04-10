@@ -125,3 +125,13 @@ $inactive: false;
 .item-link {
         float: right;
 }
+
+.about-title, .about-content {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+}
+
+.about-title {
+        padding: 40px;
+}
