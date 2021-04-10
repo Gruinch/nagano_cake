@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-    root 'public/homes#top' 
-    get '/about' => 'public/homes#about', as: 'public/hom/about'
+    scope module: :public do
+    root 'homes#top'
+    get '/about' => 'homes#about', as: '/homes/about'
+    resources :customers, only: [:show, :edit, :update, :unsubscribe, :withdraw]
+    resources :items, only: [:index, :show]
+    resources :addresses, only: [:index, :edit, :update, :destroy]
+    resources :cart_items, only: [:index, :update, :destroy, :destroy_all, :create]
+    resources :orders
+    end
 
     namespace :admin do
     get '/' => 'homes#top', as: '/homes/top'
@@ -24,10 +31,5 @@ Rails.application.routes.draw do
     registrations: 'admin/registrations',
   }
 
-    resources :customers, only: [:show, :edit, :update, :unsubscribe, :withdraw]
-    resources :items, only: [:index, :show]
-    resources :addresses, only: [:index, :edit, :update, :destroy]
-    resources :cart_items, only: [:index, :update, :destroy, :destroy_all, :create]
-    resources :orders
 
 end

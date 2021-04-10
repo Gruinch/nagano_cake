@@ -7,31 +7,22 @@
     購入には会員登録が必要になります。</p>
   </div>
   </div>
-  
+
   <div class="top-items">
     <div class="new-items-top">
       <h5>新着商品</h5>
     </div>
-    <div clas="new-items">
-      <div clas="new-items-image"></div>
-      <div class="new-items-name"></div>
-      <div clas="new-items-price"></div>
+    <div class="new-items">
+     <% @items.first(4).each do |item| %>
+      <div class="new-items-detail">
+        <%= link_to item_path(item.id) do %>
+        <div class="new-items-image"><%= attachment_image_tag item, :image, :fill, 200, 90, fallback: "noimage.png" %></div>
+        <div class="new-items-name"><%= item.name %></div>
+        <div class="new-items-price">¥<%= item.price %></div>
+        <% end %>
+      </div>
+     <% end %>
     </div>
-    <div clas="new-items">
-      <div clas="new-items-image"></div>
-      <div class="new-items-name"></div>
-      <div clas="new-items-price"></div>
-    </div>
-    <div clas="new-items">
-      <div clas="new-items-image"></div>
-      <div class="new-items-name"></div>
-      <div clas="new-items-price"></div>
-    </div>
-    <div clas="new-items">
-      <div clas="new-items-image"></div>
-      <div class="new-items-name"></div>
-      <div clas="new-items-price"></div>
-    </div>
-
+     <div class="item-link"><%= link_to "全ての商品を見る>", items_path %></a></div>
   </div>
 </div>

@@ -111,3 +111,17 @@ $inactive: false;
         height: 200px;
         width: 100%;
 }
+
+.new-items {
+        display: flex;
+        width: auto;
+        justify-content: space-between;
+}
+
+.new-items-detail {
+}
+
+
+.item-link {
+        float: right;
+}
