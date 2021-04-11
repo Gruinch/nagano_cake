@@ -46,9 +46,14 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "新規登録" %>
   </div>
 <% end %>
-
+  <div class="index">
+    <h5>既に登録済みの方</h5>
+    <div class="index-detail">
+      <div><a href="/customers/sign_in" data-method="get">こちら</a>からログインしてください</div>
+    </div>
+  </div>
 <%= render "public/customers/shared/links" %>
 </div>

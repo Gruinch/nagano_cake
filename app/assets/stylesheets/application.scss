@@ -118,12 +118,30 @@ $inactive: false;
         justify-content: space-between;
 }
 
-.new-items-detail {
-}
-
-
 .item-link {
         float: right;
+}
+
+.items-header {
+        margin: 20px;
+        padding-left: 30px;
+        display: flex;
+
+}
+
+.item-numbers {
+        padding: 10px;
+}
+
+.items-all {
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: 0 auto;
+}
+
+.item-detail {
+        margin: 5px;
 }
 
 .about-title, .about-content {

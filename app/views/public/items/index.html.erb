@@ -1,2 +1,18 @@
-<h1>Public::Items#index</h1>
-<p>Find me in app/views/public/items/index.html.erb</p>
+<div class="items-index container">
+<div class="items-header">
+  <h3>商品一覧</h3>
+  <p class="item-numbers">（全<%= @item %>件）</p>
+</div>
+
+<div class="items-all">
+     <% @items.first(8).each do |item| %>
+      <div class="item-detail">
+        <%= link_to item_path(item.id) do %>
+        <div class="item-image"><%= attachment_image_tag item, :image, :fill, 200, 90, fallback: "noimage.png" %></div>
+        <div class="item-name"><%= item.name %></div>
+        <div class="item-price">¥<%= item.price %></div>
+        <% end %>
+      </div>
+     <% end %>
+</div>
+</div>
