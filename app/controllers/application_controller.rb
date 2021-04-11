@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
@@ -29,5 +28,15 @@ def
         root_path
     end
 end
+
+helper_method :current_cart
+def current_cart
+  if session[:cart_item_id]
+    @cart_item = CartItem.find(session[:cart_item_id])
+  else
+    @cart_item = CartItem.create
+    session[:cart_item_id] = @cart_item.id 
+  end 
+end 
 
 end
