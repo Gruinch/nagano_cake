@@ -31,5 +31,4 @@ Rails.application.routes.draw do
     registrations: 'admin/registrations',
   }
 
-
 end
