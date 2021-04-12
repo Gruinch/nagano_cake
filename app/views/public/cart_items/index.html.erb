@@ -20,6 +20,7 @@
       <td><%= cart_item.item.price %></td>
       <td><%= cart_item.amount %></td>
       <td><%= cart_item.item.price * cart_item.amount %></td>
+      <td><%= link_to cart_item_path(cart_item.id), method: :delete do %><div class="btn btn-danger">削除する</div><% end %></td>
     </tr>
     <% end %>
   </tbody>
