@@ -1,6 +1,7 @@
 <div class="container">
   <div class="header">
-    <h5>ショッピングカート</h5>
+    <div><h5>ショッピングカート</h5></div>
+    <div><%= link_to  destroy_all_cart_items_path, method: :delete do %><div class="btn btn-danger">カートを空にする</div><% end %></div>
   </div>
   <div class="cart-items">
     <table class="table table-bordered">

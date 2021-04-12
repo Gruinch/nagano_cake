@@ -11,9 +11,12 @@ Rails.application.routes.draw do
     resources :customers
     resources :items, only: [:index, :show]
     resources :addresses, only: [:index, :edit, :update, :destroy]
-    resources :cart_items, only: [:index, :update, :destroy, :destroy_all, :create]
+    resources :cart_items do
+      collection do
+        delete 'destroy_all'
+      end
+    end   
     resources :orders
-
     end
 
     namespace :admin do
