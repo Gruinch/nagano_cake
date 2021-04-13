@@ -13,10 +13,10 @@ class Public::CartItemsController < ApplicationController
     redirect_to cart_items_path
   end
 
-
   def update
-      @cart_item.update(amount: params[:amount].to_i)
-      redirect_to current_cart
+    @cart_items = CartItem.find(params[:id])
+    @cart_items.update(cart_item_params)
+    redirect_to current_cart
   end
 
   def destroy

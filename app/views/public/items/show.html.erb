@@ -23,9 +23,9 @@
         </tbody>
       </table>
       <div class="add-item">
-      <%= form_with model:@cart_item, url:'/cart_items', local:true do |f| %>
+      <%= form_with model: @cart_item, url:'/cart_items', local:true do |f| %>
         <%= f.select :amount, [ 1,2,3,4,5 ] %>
-
+       
         <%= f.hidden_field :item_id, :value => @item.id %>
         <%= f.submit "カートに入れる", class:"btn btn-success"%>
       <% end %>
