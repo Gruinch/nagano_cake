@@ -5,7 +5,7 @@
   <div class="payment_method">
     <div class="customer-order-index"><h7>支払い方法</h7></div>
     <div class="customer-payment-method">
-      <%= form_with model:@order do |f| %>
+      <%= form_with model:@order, url: confirm_orders_path  do |f| %>
       <div><%= f.radio_button :payment_method, :card, checked: "checked" %>
             <%= f.label :クレジットカード, class: "payment_method" %></div>
       <div><%= f.radio_button :payment_method, :cash %>

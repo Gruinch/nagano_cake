@@ -7,8 +7,9 @@ class Public::OrdersController < ApplicationController
 
   def confirm
     #@cart_itmes = ログイン中のカスタマーのカートの情報
-    p '-------------------------------'
     @payment_method = params[:order][:payment_method]
+    p @payment_method
+    p '-------------------------------'
     p '-------------------------------'
   end
 
