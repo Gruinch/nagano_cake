@@ -15,9 +15,12 @@ Rails.application.routes.draw do
       collection do
         delete 'destroy_all'
       end
-    end   
-    resources :orders
     end
+    resources :orders do
+      post '/confirm' => 'orders#confirm'
+      get '/complete' => 'orders#complete'
+    end
+  end 
 
     namespace :admin do
     get '/' => 'homes#top', as: '/homes/top'
@@ -33,5 +36,4 @@ Rails.application.routes.draw do
     passwords:     'admin/passwords',
     registrations: 'admin/registrations',
   }
-
 end
