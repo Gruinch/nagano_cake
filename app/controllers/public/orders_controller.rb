@@ -6,11 +6,19 @@ class Public::OrdersController < ApplicationController
   end
 
   def confirm
-    #@cart_itmes = ログイン中のカスタマーのカートの情報
+    @cart_items = current_customer.cart_items #ログイン中のカスタマーのカートの情報
+    @orders = current_customer.orders
     @payment_method = params[:order][:payment_method]
-    p @payment_method
-    p '-------------------------------'
-    p '-------------------------------'
+    if params[:order][:address_order] == '0'
+      @address = current_customer.address
+      @postal_code = current_customer.postal_code
+      @name = current_customer.last_name
+    else
+      @address = params[:order][:address]
+      @postal_code = params[:order][:postal_code]
+      @name = params[:order][:name]
+    end
+    @shipping_fee = "300"
   end
 
   def complete

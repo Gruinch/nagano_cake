@@ -1,2 +1,57 @@
-<h1>注文情報確認</h1>
-<p>Find me in app/views/public/orders/confirm.html.erb</p>
+<div class="container">
+    <div class="order-confirm-header">
+        <h5>注文情報確認</h5>
+    </div>
+    <div class="order-confirm-main">
+    <table class="table table-bordered col">
+  <thead>
+    <tr>
+      <th scope="col">商品名</th>
+      <th scope="col">単価</th>
+      <th scope="col">数量</th>
+      <th scope="col">小計</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cart_items.each do |cart_item| %>
+     <tr>
+       <td scope="row">
+        <div class="col">
+          <%= attachment_image_tag cart_item.item,:image, :fill,75, 75, fallback: "noimage.png"%></div>
+          <div class="col"><%= cart_item.item.name %></div>
+          </td>
+          <td><%= cart_item.item.price %></td>
+          <td><%= cart_item.amount %></td>
+          <td><%= cart_item.item.price * cart_item.amount %></td>
+        </tr>
+      <% end %>
+  </tbody>
+  </table>
+
+   <div class="col">
+   <table class="table">
+  <thead>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row table-secondary">送料</th>
+      <td><%= @shipping_fee %></td>
+      <th scope="row table-secondary">商品合計</th>
+      <td><%= @cart_item.item.price * @cart_item.amount.sum %></td>
+      <th scope="row table-secondary">請求金額</th>
+      <td><%= @cart_item.item.price * @cart_item.amount + @shipping_fee.to_i %></td>
+    </tr>
+  </tbody>
+  </table>
+  <div class="order-confirm-payment_method">
+      <h6>支払い方法</h6>
+      <div class="payment_method"><%= @payment_method %>></div>
+  </div>
+  <div class="shipping-address">
+      <h6>お届け先</h6>
+      <div class="address"><%= @postal_code %><%= @address %></div>
+      <div class="shipping-name"><%= @name %></div>
+  </div>
+  </div>
+ </div>
+</div>

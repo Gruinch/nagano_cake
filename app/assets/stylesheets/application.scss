@@ -53,6 +53,7 @@
 h5 {
         background-color: #b0c4de;
         margin: 10px;
+        width: 200px;
 }
 
 .add {
@@ -153,4 +154,29 @@ $inactive: false;
 
 .about-title {
         padding: 40px;
+}
+
+.cart-top {
+        height: 100px;
+        width: 100%;
+        margin: 10px;
+}
+
+.empty-button {
+        float: right;
+}
+
+.item-name {
+        text-align: center;
+        display: inline-block;
+}
+
+.total-price {
+        display: inline-block;
+}
+
+.cart-contents {
+        height: 100px;
+        width: 100%;
+        margin: 10px;
 }

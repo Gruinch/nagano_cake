@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       collection do
       post '/confirm' => 'orders#confirm'
       get '/complete' => 'orders#complete'
-    end 
+    end
     end
   end 
 

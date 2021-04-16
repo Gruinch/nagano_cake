@@ -2,10 +2,10 @@
   <div class="header">
     <h5>注文情報入力</h5>
   </div>
+  <%= form_with model:@order, url: confirm_orders_path,method: :post, local: true do |f| %>
   <div class="payment_method">
     <div class="customer-order-index"><h7>支払い方法</h7></div>
     <div class="customer-payment-method">
-      <%= form_with model:@order, url: confirm_orders_path  do |f| %>
       <div><%= f.radio_button :payment_method, :card, checked: "checked" %>
             <%= f.label :クレジットカード, class: "payment_method" %></div>
       <div><%= f.radio_button :payment_method, :cash %>
@@ -19,7 +19,7 @@
       <%= f.label current_customer.postal_code %>
       <%= f.label current_customer.address %>
        <%= f.label current_customer.last_name %>
-      </div>
+    </div>
     </div>
      <div class="customer-addresses"><%= f.radio_button :address_order,1 %>新しいお届け先</div>
      <div class="customer-addresses-new">
@@ -27,6 +27,6 @@
         <div class="address-field">住所<%= f.text_field :address  %></div>
         <div class="address-field">宛名<%= f.text_field :name  %></div>
      </div>
-      <%= f.submit "確認画面へ進む"%>
-      <% end %>
+      <%= f.submit "確認画面へ進む" %>
+  <% end %>
 </div>
