@@ -8,7 +8,15 @@ Rails.application.routes.draw do
     passwords:     'public/customers/passwords',
     registrations: 'public/customers/registrations'
   }
-    resources :customers
+    resources :customers do
+      collection do
+      get '/mypage' => 'customers#show'
+      get '/edit'=> 'customers#edit'
+      patch '/' => 'customers#update'
+      get '/confirm_unsubscribe' => 'customers#unsubscribe'
+      patch '/withdraw' => 'customers#withdraw'
+    end
+  end
     resources :items, only: [:index, :show]
     resources :addresses, only: [:index, :edit, :update, :destroy]
     resources :cart_items do
@@ -22,7 +30,7 @@ Rails.application.routes.draw do
       get '/complete' => 'orders#complete'
     end
     end
-  end 
+  end
 
     namespace :admin do
     get '/' => 'homes#top', as: '/homes/top'

@@ -13,4 +13,8 @@ class Customer < ApplicationRecord
   
   enum is_active: { active: true, inactive: false }
   
+  def name
+    "#{self.last_name} #{self.first_name}"
+  end
+
 end

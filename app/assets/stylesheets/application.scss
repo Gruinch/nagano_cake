@@ -50,10 +50,14 @@
         }
 }
 
-h5 {
+.contents-header {
         background-color: #b0c4de;
-        margin: 10px;
+        margin: 30px 60px;
         width: 200px;
+}
+
+.header-text {
+        text-align: center;
 }
 
 .add {
@@ -180,3 +184,24 @@ $inactive: false;
         width: 100%;
         margin: 10px;
 }
+
+.customer-order-index {
+        width: 100%;
+        margin: 20px;
+        padding-left: 15px;
+}
+
+.customer-order-contents {
+        width: 80%;
+        padding-left: 40px;
+}
+
+.customer-address {
+        margin: 10px;
+        padding-left: 15px;
+}
+
+.address-1 {
+        display: flex;
+}
+

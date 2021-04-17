@@ -12,7 +12,7 @@ class Public::OrdersController < ApplicationController
     if params[:order][:address_order] == '0'
       @address = current_customer.address
       @postal_code = current_customer.postal_code
-      @name = current_customer.last_name
+      @name = current_customer.name
     else
       @address = params[:order][:address]
       @postal_code = params[:order][:postal_code]
