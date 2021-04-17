@@ -19,7 +19,7 @@
     <tr>
       <td scope="row">
         <div class="item-image">
-          <%= attachment_image_tag cart_item.item,:image, :fill,75, 75, fallback: "noimage.png"%></div>
+          <%= attachment_image_tag cart_item.item, :image, :fill,75, 75, fallback: "noimage.png"%></div>
           <div class="item-name"><%= cart_item.item.name %></div>
       </td>
       <td><%= cart_item.item.price %></td>

@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     resources :orders do
       collection do
       post '/confirm' => 'orders#confirm'
+      patch '/' => 'orders#create'
       get '/complete' => 'orders#complete'
     end
     end

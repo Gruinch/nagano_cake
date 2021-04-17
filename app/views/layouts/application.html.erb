@@ -30,12 +30,12 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav ml-auto justify-content-end">
 
-            <% if customer_signed_in? %>
+          <% if customer_signed_in? %>
             <li class="btn btn-outline-info mx-3"><a class="nav-link" href="/customers/mypage/">マイページ</a></li>
             <li class="btn btn-outline-info mx-3"><a class="nav-link" href="/items/">商品一覧</a></li>
             <li class="btn btn-outline-info mx-3"><a class="nav-link" href="/cart_items/">カート</a></li>
             <li class="btn btn-outline-info mx-3"><a class="nav-link" href="/customers/sign_out" data-method="delete">ログアウト</a></li>
-            <% elsif admin_signed_in? %>
+          <% elsif admin_signed_in? %>
             <li class="btn btn-outline-info mx-3"><a class="nav-link" href="/admin/items/">商品一覧</a></li>
             <li class="btn btn-outline-info mx-3"><a class="nav-link" href="/admin/customers/">会員一覧</a></li>
             <li class="btn btn-outline-info mx-3"><a class="nav-link" href="/admin/">注文履歴一覧</a></li>
@@ -45,7 +45,7 @@
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
-            <%else%>
+          <%else%>
             <li class="nav-item">
               <a class="nav-link btn btn-info mx-3" href="/public/homes/about">About<span class="sr-only">(current)</span></a>
             </li>
@@ -58,7 +58,7 @@
             <li class="nav-item">
               <a class="nav-link btn btn-info mx-3" href="/customers/sign_in">ログイン</a>
             </li>
-            <% end %>
+          <% end %>
           </ul>
        </div>
     </nav>
