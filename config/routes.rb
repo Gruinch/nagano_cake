@@ -31,6 +31,7 @@ Rails.application.routes.draw do
       get '/complete' => 'orders#complete'
     end
     end
+    resource :order_details, only: [:create]
   end
 
     namespace :admin do
