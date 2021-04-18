@@ -2,12 +2,8 @@ Rails.application.routes.draw do
     scope module: :public do
     root 'homes#top'
     get '/about' => 'homes#about', as: '/homes/about'
-    
-    devise_for :customers, controllers: {
-    sessions:      'public/customers/sessions',
-    passwords:     'public/customers/passwords',
-    registrations: 'public/customers/registrations'
-  }
+  
+    devise_for :customers
     resource :customers do
       get '/mypage' => 'customers#show'
      collection do

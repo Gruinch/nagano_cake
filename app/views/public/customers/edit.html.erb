@@ -1,1 +1,37 @@
-<div class="unsubscribe-button"><%=link_to "退会する", confirm_unsubscribe_customers_path, class:"btn btn-danger" %></div>
+<div class="container">
+  <div ><h5>会員情報編集</h5></div>
+  <div class="customer-edit">
+    <%= form_with model:@customer, local:true do |f| %>
+    <div class="edit-customer-contents">
+      <label>氏名</label>
+      <div><%=f.text_field :last_name, class:"form-control"%></div>
+      <div><%=f.text_field :first_name, class:"form-control"%></div>
+    </div>
+    <div class="edit-customer-contents">
+      <label>フリガナ</label>
+      <div><%=f.text_field :last_name_kana, class:"form-control"%></div>
+      <div><%=f.text_field :first_name_kana, class:"form-control"%></div>
+    </div>
+    <div class="edit-customer-contents">
+      <label>郵便番号</label>
+      <div><%=f.text_field :postal_code, class:"form-control"%></div>
+    </div>
+    <div class="edit-customer-contents">
+      <label>住所</label>
+      <div><%=f.text_field :address, class:"form-control"%></div>
+    </div>
+    <div class="edit-customer-contents">
+      <label>電話番号</label>
+      <div><%=f.text_field :telephone_number, class:"form-control"%></div>
+    </div>
+    <div class="edit-customer-contents">
+      <label>メールアドレス</label>
+      <div><%=f.text_field :email, class:"form-control"%></div>
+    </div>
+    <div class="edit-customer-contents">
+      <div class="edit-button"><%= f.submit "変更内容を保存", class:"btn btn-success" %></div>
+      <% end %>
+      <div class="unsubscribe-button"><%=link_to "退会する", confirm_unsubscribe_customers_path, class:"btn btn-danger" %></div>
+    </div>
+  </div>
+</div>
