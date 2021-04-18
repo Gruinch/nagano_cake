@@ -11,7 +11,7 @@ class Customer < ApplicationRecord
   has_many:order_details, through: :orders
   has_many:orders, dependent: :destroy
   
-  enum is_active: { active: true, inactive: false }
+  #enum is_active: { active: true, inactive: false }
   
   def name
     "#{self.last_name} #{self.first_name}"

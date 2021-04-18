@@ -2,21 +2,21 @@ Rails.application.routes.draw do
     scope module: :public do
     root 'homes#top'
     get '/about' => 'homes#about', as: '/homes/about'
-
+    
     devise_for :customers, controllers: {
     sessions:      'public/customers/sessions',
     passwords:     'public/customers/passwords',
     registrations: 'public/customers/registrations'
   }
-    resources :customers do
-      collection do
+    resource :customers do
       get '/mypage' => 'customers#show'
-      get '/edit'=> 'customers#edit'
+     collection do
+      get '/confirm_unsubscribe' => 'customers#unsubscribe', as: '/confirm_unsubscribe'
+      patch '/withdraw' => 'customers#withdraw', as: '/withdraw'
       patch '/' => 'customers#update'
-      get '/confirm_unsubscribe' => 'customers#unsubscribe'
-      patch '/withdraw' => 'customers#withdraw'
     end
   end
+
     resources :items, only: [:index, :show]
     resources :addresses, only: [:index, :edit, :update, :destroy]
     resources :cart_items do
