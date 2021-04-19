@@ -2,8 +2,7 @@ Rails.application.routes.draw do
     scope module: :public do
     root 'homes#top'
     get '/about' => 'homes#about', as: '/homes/about'
-  
-    devise_for :customers
+
     resource :customers do
       get '/mypage' => 'customers#show'
      collection do
@@ -11,6 +10,7 @@ Rails.application.routes.draw do
       patch '/withdraw' => 'customers#withdraw', as: '/withdraw'
       patch '/' => 'customers#update'
     end
+    devise_for :customers
   end
 
     resources :items, only: [:index, :show]

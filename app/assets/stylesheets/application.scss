@@ -176,3 +176,24 @@ $inactive: false;
 .address-1 {
         display: flex;
 }
+.customer-link {
+        display: flex;
+        margin: 20px;
+}
+.customer-link-button{
+        margin-left: 50px;
+}
+.edit-customer-contents {
+        display: flex;
+        margin: 10px;
+}
+
+.edit-customer-detail {
+        padding-left: 30px;
+}
+
+.edit-button, 
+.unsubscribe-button {
+        margin-left: 30px;
+        margin-right: 40px;
+}
