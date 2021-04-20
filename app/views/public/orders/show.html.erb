@@ -1,2 +1,75 @@
-<h1>Public::Orders#show</h1>
-<p>Find me in app/views/public/orders/show.html.erb</p>
+<div class="container">
+  <div class="contents-header">
+    <div class="header-text"><h5>注文履歴詳細</h5></div>
+  </div>
+    <div class="order-show"><h5>登録情報</h5></div>
+      <div class="order-table">
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <td class="table-active">注文日</td>
+              <td><%= @order.created_at %></td>
+            </tr>
+            <tr>
+              <td class="table-active">配送先</td>
+              <td><%= @order.postal_code %><%= @order.address %><br><%= @order.name %></td>
+            </tr>
+            <tr>
+              <td class="table-active">支払い方法</td>
+              <td><%= @order.payment_method %></td>
+            </tr>
+            <tr>
+              <td class="table-active">ステータス</td>
+              <td><%=  %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="order-show"><h5>請求情報</h5></div>
+       <div class="order-table">
+         <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <td class="table-active">商品合計</td>
+              <td><%= @order.total_payment %></td>
+            </tr>
+            <tr>
+              <td class="table-active">配送料</td>
+              <td><%= @order.shipping_fee %></td>
+            </tr>
+            <tr>
+              <td class="table-active">ご請求額</td>
+              <td><%= @order.total_payment + @order.shipping_fee %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="order-show"><h5>注文商品</h5></div>
+       <div class="order-table">
+         <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <td class="table-active">商品</td>
+              <td><%= order_details.item.name %></td>
+            </tr>
+            <tr>
+              <td class="table-active">単価</td>
+              <td><%= order_details.item.price %></td>
+            </tr>
+            <tr>
+              <td class="table-active">個数</td>
+              <td><%= order_details.item.amount %></td>
+            </tr>
+            <tr>
+              <td class="table-active">小計</td>
+              <td><%= order_details.item.price * order_details.item.amount %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+  
+</div>
