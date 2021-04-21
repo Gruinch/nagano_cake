@@ -48,13 +48,13 @@
         </table>
      </div>
       <div class="order-confirm-main row h-50">
-        <div class="order-confirm-payment_method">
+        <div class="order-confirm-details">
             <h6>支払い方法</h6>
             <div class="payment_method"><%= @payment_method %></div>
         </div>
-        <div class="shipping-address">
+        <div class="order-confirm-details">
             <h6>お届け先</h6>
-            <div class="address"><%= @order.postal_code %><%= @order.address %></div>
+            <div class="address">〒<%= @order.postal_code %><%= @order.address %></div>
             <div class="shipping-name"><%= @name %></div>
         </div>
         <div>

@@ -2,8 +2,9 @@
   <div class="contents-header">
     <div class="header-text"><h5>注文履歴詳細</h5></div>
   </div>
-    <div class="order-show"><h5>登録情報</h5></div>
+   <div class="order_detail-tables">
       <div class="order-table">
+        <div class="order-show"><h5>登録情報</h5></div>
         <table class="table table-bordered">
           <tbody>
             <tr>
@@ -12,11 +13,11 @@
             </tr>
             <tr>
               <td class="table-active">配送先</td>
-              <td><%= @order.postal_code %><%= @order.address %><br><%= @order.name %></td>
+              <td>〒<%= @order.postal_code %></br><%= @order.address %><br><%= @order.name %></td>
             </tr>
             <tr>
               <td class="table-active">支払い方法</td>
-              <td><%= @order.payment_method %></td>
+              <td><%= @order.payment_method_i18n %></td>
             </tr>
             <tr>
               <td class="table-active">ステータス</td>
@@ -25,8 +26,8 @@
           </tbody>
         </table>
       </div>
-      <div class="order-show"><h5>請求情報</h5></div>
        <div class="order-table">
+        <div class="order-show"><h5>請求情報</h5></div>
          <table class="table table-bordered">
           <tbody>
             <tr>
@@ -44,26 +45,27 @@
           </tbody>
         </table>
       </div>
-      <div class="order-show"><h5>注文商品</h5></div>
-       <div class="order-table">
+    </div>
+       <div class="order-item-table">
+        <div class="order-show"><h5>注文商品</h5></div>
          <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col" class="table-active">商品</th>
+              <th scope="col" class="table-active">単価</th>
+              <th scope="col" class="table-active">個数</th>
+              <th scope="col" class="table-active">小計</th>
+            </tr>
+          </thead>
           <tbody>
             <tr>
-              <td class="table-active">商品</td>
-              <td><%= order_details.item.name %></td>
+          <% @order.order_details.each do |order_detail| %>
+              <td><%= order_detail.item.name %></td>
+              <td><%= order_detail.item.price %></td>
+              <td><%= order_detail.amount %></td>
+              <td><%= order_detail.item.price * order_detail.amount %></td>
             </tr>
-            <tr>
-              <td class="table-active">単価</td>
-              <td><%= order_details.item.price %></td>
-            </tr>
-            <tr>
-              <td class="table-active">個数</td>
-              <td><%= order_details.item.amount %></td>
-            </tr>
-            <tr>
-              <td class="table-active">小計</td>
-              <td><%= order_details.item.price * order_details.item.amount %></td>
-            </tr>
+          <% end %>
           </tbody>
         </table>
       </div>
@@ -71,5 +73,5 @@
 
 
 
-  
+
 </div>

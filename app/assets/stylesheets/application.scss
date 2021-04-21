@@ -197,3 +197,20 @@ $inactive: false;
         margin-left: 30px;
         margin-right: 40px;
 }
+
+.order_detail-tables {
+        display: flex;
+}
+
+.order-table {
+        margin-left: 20px;
+}
+
+.order-item-table {
+        width: 70%;
+}
+
+.address-form {
+        display: flex;
+        margin: 20px;
+}
