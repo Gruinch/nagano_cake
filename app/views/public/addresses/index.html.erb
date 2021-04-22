@@ -21,4 +21,29 @@
     </div>
     <% end %>
   </div>
+  <div class="address-table">
+    <table class="table table-bordered col-8">
+    　<thead>
+        <tr>
+          <th scope="col">郵便番号</th>
+          <th scope="col">住所</th>
+          <th scope="col">宛名</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+    　<tbody>
+      <% @addresses.each do |address| %>
+        <tr>
+          <td><%= address.postal_code %></td>
+          <td><%= address.address %></td>
+          <td><%= address.name %></td>
+          <td>
+            <div class="address-button"><%= link_to "編集する", edit_address_path(address), class:"btn btn-success" %></div>
+            <div class="address-button"><%= link_to "削除する", address_path(address), method: :delete, class:"btn btn-danger" %></div>
+          </td>
+        </tr>
+      　<% end %>
+    　</tbody>
+  　</table>
+  </div>
 </div>

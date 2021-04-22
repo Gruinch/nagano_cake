@@ -40,7 +40,14 @@
           <tr>
             <td></td>
             <td><a class="btn btn-success" href="/admin/customers/<%= @customer.id %>/edit">編集する</a></td>
-            <td><a class="btn btn-primary" href="/admin/orders">注文履歴一覧を見る</a></td>
+            <td>
+              <%= form_with model: @order, url"/admin", method: :get, local:true do |f| %>
+                <%= f.hidden_field :customer_id %>
+                <%= f.hidden_field :name %>
+                <%= f.hidden_field :amount %>
+                <%= f.hidden_field :created_at %>
+              <% end %>
+              <a class="btn btn-primary" href="/admin/orders">注文履歴一覧を見る</a></td>
           </tr>
         </tbody>
       </table>
