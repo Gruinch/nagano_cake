@@ -1,18 +1,15 @@
 <div class="container">
-  <div class="genre-name row">
-    <h5>ジャンル一覧・追加</h5>
+  <div class="contents-header">
+    <h5 class="header-text">ジャンル一覧・追加</h5>
   </div>
-  <div class="row">
-    <div class="col-5">
+  <div class="genres">
+    <div class="genre-form form-inline">
+      <label class="form-inline">ジャンル名</label>
       <%= form_with model:@genre, url:admin_genres_path, local:true do |f| %>
-      <div class="genre-new">
-        <label class="genre-new">ジャンル名</label>
-        <div class="genre-new"><%= f.text_field :name, class:"form-control", placeholder:"ジャンル名" %></div>
-      </div>
-      <div class="genre-button">
-      <%= f.submit  '新規登録',class:"btn btn-success"  %>
-      <% end %>
-      </div>
+        <%= f.text_field :name, class:"form-control genre-new-form", placeholder:"ジャンル名" %>
+        <%= f.submit  '新規登録',class:"btn btn-success genre-button"  %>
+        <% end %>
+    </div>
       <div class="genre-table">
         <table class="table">
           <thead>
@@ -30,9 +27,7 @@
             <% end %>
           </tbody>
         </table>
-
       </div>
-    </div>
     <div class="col-2">
     </div>
     <div class="col-5"></div>

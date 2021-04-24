@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     root 'homes#top'
     get '/about' => 'homes#about'
 
-    resource :customers do
+  
+    resource :customers, :except => [:new, :create, :show] do
       get '/mypage' => 'customers#show'
      collection do
       get '/confirm_unsubscribe' => 'customers#unsubscribe', as: '/confirm_unsubscribe'
@@ -11,8 +12,11 @@ Rails.application.routes.draw do
       patch '/' => 'customers#update'
     end
     end
-    devise_for :customers
-
+    devise_for :customers, controllers: {
+    sessions:      'public/customers/sessions',
+    passwords:     'public/customers/passwords',
+    registrations: 'public/customers/registrations',
+  }
     resources :items, only: [:index, :show]
     resources :addresses, only: [:index, :create, :edit, :update, :destroy]
     resources :cart_items do

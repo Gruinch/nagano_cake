@@ -22,11 +22,33 @@
 .contents-header {
         background-color: #b0c4de;
         margin: 30px 60px;
-        width: 200px;
+        width: 150px;
+}
+
+.contents-header-customer {
+        background-color: #b0c4de;
+        margin: 30px 60px;
 }
 
 .header-text {
         text-align: center;
+}
+
+.form-group {
+        display: flex;
+}
+.form-label{
+        width: 200px;
+        float: left;
+}
+
+.form-input {
+        display: flex;
+        width: 300px;
+}
+
+.label-name {
+        width: 30px;
 }
 
 .add {
@@ -38,6 +60,15 @@
 
 .add-button {
         text-align: right;
+        margin: 20px;
+}
+.genres {
+        margin: 10px;
+}
+
+.genre-table {
+        margin-top: 50px;
+        padding-right: 300px;
 }
 
 .items-table {
@@ -68,6 +99,7 @@ $inactive: false;
         @else {
                 color: #808080;
         }
+
 }
 
 /*会員側*/
@@ -192,7 +224,7 @@ $inactive: false;
         padding-left: 30px;
 }
 
-.edit-button, 
+.edit-button,
 .unsubscribe-button {
         margin-left: 30px;
         margin-right: 40px;

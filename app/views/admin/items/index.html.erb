@@ -1,19 +1,16 @@
 <div class="container">
-  <div class="row-4 m-3">
-    <div class="item-title">
-     <h5>商品一覧</h5>
+  <div class="contents-header">
+     <h5 class="header-text">商品一覧</h5>
+  </div>
     <div class="item-title add-button">
       <a href="/admin/items/new"><i class="fas fa-plus-circle add"></i></a>
     </div>
-    </div>
-
-  </div>
       <table class="table items-table">
         <thead>
           <tr>
-            <th scope="col">商品ID</th>
-            <th scope="col">商品名</th>
-            <th scope="col">税抜価格</th>
+            <th scope="col" class="table-active">商品ID</th>
+            <th scope="col" class="table-active">商品名</th>
+            <th scope="col" class="table-active">税抜価格</th>
           </tr>
         </thead>
         <tbody>
@@ -21,7 +18,7 @@
           <tr>
             <td><%= item.id %></td>
             <td><%= link_to item.name, admin_item_path(item.id) %></td>
-            <td><%= item.price %></td>
+            <td><%= item.price.to_s(:delimited) %></td>
           </tr>
           <% end %>
         </tbody>

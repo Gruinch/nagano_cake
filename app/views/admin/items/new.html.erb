@@ -1,26 +1,26 @@
   <div class="container">
-  <div class="row">
-  <h5>商品新規登録</h5>
+  <div class="contents-header">
+  <h5 class="header-text">商品新規登録</h5>
   </div>
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
       <%= form_with model:@item, url:admin_items_path, local:true do |f| %>
-      <div class="p-3">
+      <div class="p-3 form-inline">
         <label for="d-block inputImage">商品画像</label>
-        <div><%= f.attachment_field :image %></div>
+        <div class="p-3"><%= f.attachment_field :image %></div>
       </div>
-      <div class="p-3 row-auto">
+      <div class="p-3 row-auto form-inline">
         <label>商品名</label>
-        <div><%= f.text_field :name, class:"form-control" %></div>
+        <div class="p-3"><%= f.text_field :name, class:"form-control" %></div>
       </div>
-      <div class="p-3 row-auto">
+      <div class="p-3 row-auto form-inline">
          <label>商品紹介</label>
-         <div rows="5"><%= f.text_area :introduction, class:"form-control" %></div>
+         <div rows="10" class="p-3"><%= f.text_area :introduction, class:"form-control" %></div>
       </div>
-      <div>
+      <div class="form-inline">
         <label>税抜き価格</label>
-        <%= f.text_field :price, class:"form-control", placeholder:"1000" %>
+        <div class="p-3"><%= f.text_field :price, class:"form-control", placeholder:"1,000" %>円</div>
       </div>
         <div class="p-3 row-auto">
         <%= f.submit  '新規登録',class:"btn btn-success"  %>

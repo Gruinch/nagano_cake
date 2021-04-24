@@ -28,7 +28,7 @@
           <% elsif admin_signed_in? %>
             <li class="btn btn-outline-info mx-3"><a class="nav-link" href="/admin/items/">商品一覧</a></li>
             <li class="btn btn-outline-info mx-3"><a class="nav-link" href="/admin/customers/">会員一覧</a></li>
-            <li class="btn btn-outline-info mx-3"><a class="nav-link" href="/admin/">注文履歴一覧</a></li>
+            <li class="btn btn-outline-info mx-3"><%= link_to "注文履歴一覧", admin_homes_top_path(:order_sort, 0), class:"nav-link" %></li>
             <li class="btn btn-outline-info mx-3"><a class="nav-link" href="/admin/genres/">ジャンル一覧</a></li>
             <li class="btn btn-outline-info mx-3"><a class="nav-link" href="/admins/sign_out" data-method="delete">ログアウト</a></li>
             <form class="form-inline mt-2 mt-md-0">

@@ -1,18 +1,14 @@
 <div class="container">
-  <div class="row">
-    <h5>ジャンル編集</h5>
+  <div class="contents-header">
+    <h5 class="header-text">ジャンル編集</h5>
   </div>
   <div class="row">
-    <div class="col-5">
+    <div class="genre-form form-inline col-5">
+      <label class="genre-new">ジャンル名</label>
       <%= form_with model:@genre, url:admin_genre_path, local:true do |f| %>
-      <div class="genre-new">
-        <label class="genre-new">ジャンル名</label>
-        <div class="genre-new"><%= f.text_field :name, class:"form-control", placeholder:"ジャンル名" %></div>
-      </div>
-      <div class="genre-button">
-      <%= f.submit  '変更を保存',class:"btn btn-success"  %>
+        <%= f.text_field :name, class:"form-control", placeholder:"ジャンル名" %>
+        <%= f.submit  '変更を保存',class:"btn btn-success"  %>
       <% end %>
-      </div>
     </div>
   </div>
 </div>

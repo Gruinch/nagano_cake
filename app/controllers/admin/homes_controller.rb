@@ -2,10 +2,10 @@ class Admin::HomesController < ApplicationController
   before_action :authenticate_admin!
 
   def top
-    if @order.id == order(params[:id])
-      @order.address = current_customer.address
-      @order.postal_code = current_customer.postal_code
-      @order.name = current_customer.name
+    case params[:order_sort]
+    when '1'
+      @customer = Customer.find(params[:customer_id])
+      @orders = @customer.orders
     else
       @orders = Order.all
     end
