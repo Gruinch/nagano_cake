@@ -1,16 +1,14 @@
-<div class="container">
   <div class="confirm">
     <div class="confirm-index">
-    <h3>本当に退会しますか？</h3>
+      <h3 class="confirm-message">本当に退会しますか?</h3>
     </div>
-    <div class="confirm-p">
+    <div class="confirm-caution">
       <p>退会すると、会員登録情報や</br>
       これまでの購入履歴が閲覧できなくなります。</br>
       退会する場合は「退会する」をクリックしてください</p>
     </div>
-    <div class="confirm-button">
-      <div class="no-btn"><%= link_to "退会しない", mypage_customers_path, class:"btn btn-success" %></div>
-      <div class="yes-btn"><%= link_to "退会する", withdraw_customers_path, method: :patch, class:"btn btn-danger"%></div>
+    <div class="confirm-index">
+      <div class="confirm-button"><%= link_to "退会しない", mypage_customers_path, class:"btn btn-primary" %></div>
+      <div class="confirm-button"><%= link_to "退会する", withdraw_customers_path, method: :patch, class:"btn btn-danger"%></div>
     </div>
   </div>
-</div>

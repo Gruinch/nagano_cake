@@ -20,9 +20,18 @@
     </div>
     <div class="row m-3">
       <div class="col">支払い方法</div>
-      <div class="col"><%= @order.payment_method_i18n %></div>
+      <div class="col"><%= @order.payment_methode_i18n %></div>
       <div class="col"></div>
     </div>
+    <div class="row m-3">
+      <div class="col">注文ステータス</div>
+      <div class="col"><%= form_with(model: @order, url: admin_order_path, method: :patch, local: true, class: "form-row") do |f| %>
+        <%= f.select :orders_status, Order.orders_statuses_i18n.invert, {prompt: false}, class:"form-control form-control-sm col-6"  %>
+          <%= f.submit "更新", class:"btn btn-successful" %>
+        <% end %></div>
+      <div class="col"></div>
+    </div>
+
 
     <div class="row p-3">
       <table class="col-5 table">

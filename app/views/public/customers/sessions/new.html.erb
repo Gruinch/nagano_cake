@@ -1,26 +1,32 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="container">
+  <div class="contents-header">
+    <h2 class="header-text">ログイン</h2>
   </div>
+  <div class="log-in-form">
+    <div class="for-customer">
+      <div class="contents-header header-text"><h6>会員の方はこちら</h6></div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="log-in-field">
+      　 <div class="log-in-info"><%= f.label "メールアドレス" %></div>
+      　  <div class="log-in-info">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "cake@email.com" %></div>
+      </div>
+      <div class="log-in-field">
+        <div class="log-in-info"><%= f.label "パスワード" %></div>
+        <div class="log-in-info"><%= f.password_field :password, autocomplete: "current-password", class:"form-control" %></div>
+      </div>
+      <div class="actions log-in-button">
+        <%= f.submit "ログイン", class:'btn btn-primary' %>
+      </div>
+    <% end %>
+      <div class="index">
+        <h6 class="contents-header header-text">会員登録がお済みでない方</h6>
+        <div class="index-detail">
+          <div><a href="/customers/sign_up" data-method="get">こちら</a>から会員登録してください</div>
+        </div>
+      </div>
+      <% render "public/customers/shared/links" %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
-<%= render "public/customers/shared/links" %>
+</div>

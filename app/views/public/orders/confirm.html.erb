@@ -1,15 +1,16 @@
-<div class="container h-100">
+<div class="container">
     <div class="contents-header">
         <h5 class="header-text">注文情報確認</h5>
     </div>
-    <div class="order-confirm-main row h-50">
-      <table class="table table-bordered col-8">
+    <div class="order-confirm-main">
+      <div class="confirm-table-1">
+      <table class="table table-bordered confirm-table">
         <thead>
           <tr>
-            <th scope="col">商品名</th>
-            <th scope="col">単価</th>
-            <th scope="col">数量</th>
-            <th scope="col">小計</th>
+            <th scope="col" class="table-secondary">商品名</th>
+            <th scope="col" class="table-secondary">単価</th>
+            <th scope="col" class="table-secondary">数量</th>
+            <th scope="col" class="table-secondary">小計</th>
           </tr>
         </thead>
         <tbody>
@@ -27,37 +28,38 @@
           <% end %>
         </tbody>
       </table>
-
-       <div class="col-4">
-       <table class="table table-bordered">
+      </div>
+      <div class="confirm-table-2">
+      <table class="table table-bordered">
          <tbody>
           <tr>
-            <th scope="row table-secondary">送料</th>
+            <th scope="row" class="table-secondary">送料</th>
             <td><%= @order.shipping_fee %></td>
           </tr>
           <tr>
-            <th scope="row table-secondary">商品合計</th>
+            <th scope="row" class="table-secondary">商品合計</th>
             <td><% @order.total_payment = item_total %>
                 <%= item_total %></td>
           </tr>
           <tr>
-            <th scope="row table-secondary">請求金額</th>
+            <th scope="row" class="table-secondary">請求金額</th>
             <td><%= @order.shipping_fee + item_total %></td>
           </tr>
           </tbody>
         </table>
-     </div>
-      <div class="order-confirm-main row h-50">
-        <div class="order-confirm-details">
-            <h6>支払い方法</h6>
-            <div class="payment_method"><%= @payment_method %></div>
-        </div>
-        <div class="order-confirm-details">
-            <h6>お届け先</h6>
-            <div class="address">〒<%= @order.postal_code %><%= @order.address %></div>
-            <div class="shipping-name"><%= @name %></div>
-        </div>
-        <div>
+      </div>
+    </div>
+    <div class="order-confirm">
+      <div class="order-confirm-details">
+            <h6 class="order-confirm-info">支払い方法</h6>
+            <div class="order-confirm-info"><%= @payment_method %></div>
+      </div>
+      <div class="order-confirm-details">
+            <h6 class="order-confirm-info">お届け先</h6>
+            <div class="order-confirm-info">〒<%= @order.postal_code %><%= @order.address %></br>
+            <%= @order.name %></div>
+      </div>
+      <div>
           <%= form_with model: @order, url:'/orders', method: :patch, local:true do |f| %>
             <%= f.hidden_field :customer_id %>
             <%= f.hidden_field :payment_method %>

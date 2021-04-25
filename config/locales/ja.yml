@@ -1,5 +1,5 @@
 ja:
-  enums:
+  enum:
     order:
       payment_method:
         card: "クレジットカード"
@@ -9,5 +9,15 @@ ja:
   enums:
     customer:
       is_active:
-        active: "有効"
-        inactive: "退会"
+        true: "有効"
+        false: "退会"
+
+  ja:
+    enums:
+      orders:
+        orders_status:
+          waiting: "支払待ち"
+          paid_up: "支払済み"
+          making: "制作中"
+          preparing: "発送準備中"
+          shipped: "発送済み"

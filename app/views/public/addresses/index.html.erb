@@ -10,14 +10,16 @@
     </div>
     <div class="address-form">
       <div class="form-label"><label>住所</label></div>
-      <div><%= f.text_field :address, class:"form-control" %></div>
+      <div class="address-form-input"><%= f.text_field :address, class:"form-control" %></div>
     </div>
     <div class="address-form">
       <div class="form-label"><label>宛名</label></div>
       <div><%= f.text_field :name, class:"form-control" %></div>
     </div>
-    <div class="submit-button">
-    <%= f.submit "新規登録", class:"btn btn-success"%>
+    <div class="address-submit-button">
+      <div class="address-submit-button-0">
+      <%= f.submit "新規登録", class:"btn btn-success"%>
+      </div>
     </div>
     <% end %>
   </div>
@@ -25,10 +27,10 @@
     <table class="table table-bordered col-8">
     　<thead>
         <tr>
-          <th scope="col">郵便番号</th>
-          <th scope="col">住所</th>
-          <th scope="col">宛名</th>
-          <th scope="col"></th>
+          <th scope="col" class="table-active">郵便番号</th>
+          <th scope="col" class="table-active">住所</th>
+          <th scope="col" class="table-active">宛名</th>
+          <th scope="col" class="table-active"></th>
         </tr>
       </thead>
     　<tbody>
@@ -38,8 +40,10 @@
           <td><%= address.address %></td>
           <td><%= address.name %></td>
           <td>
-            <div class="address-button"><%= link_to "編集する", edit_address_path(address), class:"btn btn-success" %></div>
-            <div class="address-button"><%= link_to "削除する", address_path(address), method: :delete, class:"btn btn-danger" %></div>
+            <div class="address-button">
+            <div class="address-button-0"><%= link_to "編集する", edit_address_path(address), class:"btn btn-success" %></div>
+            <div class="address-button-0"><%= link_to "削除する", address_path(address), method: :delete, class:"btn btn-danger" %></div>
+            </div>
           </td>
         </tr>
       　<% end %>

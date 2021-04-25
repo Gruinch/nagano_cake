@@ -20,7 +20,6 @@
 
 
 .contents-header {
-        background-color: #b0c4de;
         margin: 30px 60px;
         width: 150px;
 }
@@ -31,7 +30,27 @@
 }
 
 .header-text {
+        background-color: #b0c4de;
         text-align: center;
+}
+
+.index-detail {
+        text-align: center;
+}
+
+.log-in-button {
+        text-align: center;
+        padding: 10px;
+}
+.log-in-field {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        width: 800px;
+}
+
+.log-in-info {
+        width: 40%;
 }
 
 .form-group {
@@ -44,11 +63,12 @@
 
 .form-input {
         display: flex;
-        width: 300px;
+        justify-content: center;
+        width: 320px;
 }
 
 .label-name {
-        width: 30px;
+        margin: 10px;
 }
 
 .add {
@@ -89,11 +109,11 @@
 }
 
 
-$active: true;
-$inactive: false;
+$true: true;
+$false: false;
 
 .customer-status {
-        @if $active == true {
+        @if $true == true {
                 color: #32cd32;
         }
         @else {
@@ -142,7 +162,6 @@ $inactive: false;
 
 .items-all {
         display: flex;
-        flex-wrap: wrap;
         width: 80%;
         margin: 0 auto;
 }
@@ -245,4 +264,77 @@ $inactive: false;
 .address-form {
         display: flex;
         margin: 20px;
+}
+
+.address-form-input {
+        width: 45%;
+}
+
+.address-submit-button {
+        display: flex;
+        justify-content: center;
+}
+
+.address-button {
+        display: flex;
+}
+
+.address-button-0 {
+        padding: 5px;
+}
+.order-confirm-main {
+        display: flex;
+        justify-content: space-between;
+}
+
+.confirm-table-1 {
+        width: 60%;
+}
+
+.confirm-table-2 {
+        width: 30%;
+}
+
+.order-confirm-details {
+        width: 50%;
+        margin: 7px;
+        display: flex;
+}
+
+.order-confirm-info {
+        padding: 10px;
+}
+
+.thanks {
+        width: 100%;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+}
+
+.thanks-message {
+        padding: 30px;
+}
+.confirm {
+        height: 500px;
+        width: 500px;
+        margin: 30px auto;
+}
+
+.confirm-message {
+        width: 300px;
+        margin: 0 auto;
+}
+.confirm-index {
+        display: flex;
+        padding: 10px;
+}
+
+.confirm-caution,
+.confirm-button {
+        text-align: center;
+}
+.confirm-button {
+        padding: 5px;
+        width: 200px;
 }
